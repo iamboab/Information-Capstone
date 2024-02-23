@@ -35,6 +35,7 @@ class User(UserMixin, Document):
     adult_lname = StringField()
     adult_email = StringField()
     consent = BooleanField(default=False)
+    role = StringField()
 
     meta = {
         'ordering': ['lname','fname']
