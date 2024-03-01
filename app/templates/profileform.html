@@ -30,6 +30,14 @@
         </p>
 
         <p>
+            {{ form.years.label }}<br>
+            {{ form.years() }}<br>
+            {% for error in form.years.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        
+        <p>
             {{ form.image.label }}<br>
             {% if current_user.image %}
                 <img class="img-thumbnail" width="100" src="data:image;base64,{{base64encode(current_user.image.read())}}"> <br>
@@ -42,6 +50,9 @@
             {% endfor %}
         </p>
         <p>{{ form.submit() }}</p>
+
+        
+
 
         
 

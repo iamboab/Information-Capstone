@@ -36,6 +36,7 @@ class User(UserMixin, Document):
     adult_email = StringField()
     consent = BooleanField(default=False)
     role = StringField()
+    years = IntField()
 
     meta = {
         'ordering': ['lname','fname']
@@ -98,3 +99,14 @@ class Clinic(Document):
     meta = {
         'ordering': ['-createdate']
     }
+
+class Contact(Document):
+    fName = StringField()
+    lName = StringField()
+    email = EmailField()
+    phone_num = StringField()
+    
+    meta = {
+        'ordering': ['sleep_date']
+    }
+    
