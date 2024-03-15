@@ -1,9 +1,37 @@
-
 {% extends 'base.html' %}
 
 {% block body %}
 
-<h1>About Us</h1>
+{% if contactList %}
+    {{moment(contactList.createdate).calendar()}} by {{contactList.author.fname}} {{contactList.author.lname}} 
+    {% if contactList.modify_date %}
+        modified {{moment(contactList.modify_date).calendar()}}
+    {% endif %}
+    <br>
+    {% if contactList.author == current_user %}
+        <a data-toggle="tooltip" data-placement="top" title="Delete Contact List" href="/contactList/delete/{{contactList.id}}">
+            <img width="40" class="bottom-image" src="/static/delete.png">
+        </a>
+        <a data-toggle="tooltip" data-placement="top" title="Edit Contact List=" href="/contactList/edit/{{contactList.id}}">
+            <img width="40" class="bottom-image" src="/static/edit.png">
+        </a>
+    {% endif %}
 
+    <h1 class="display-5">{{contactList.fName}}</h1>
+    <p class="fs-3 text-break">
+        {% if contactList.author.image %}
+            <img width="120" class="img-thumbnail float-start me-2" src="data:image;base64,{{base64encode(contactList.author.image.read())}}">
+        {% endif %}
+            {{contactList.fName}} <br>
+            {{contactList.lName}} <br>
+            {{contactList.email}} <br>
+            {{contactList.phone_num}}
+
+    </p>
+
+{% else %}
+
+{% endif %}
+    
 
 {% endblock %}

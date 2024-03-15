@@ -53,11 +53,13 @@ class ClinicForm(FlaskForm):
     description = StringField('Description', validators=[DataRequired()])
     submit = SubmitField('Submit')
 
-#class ContactForm(FlaskForm):
-#    fName = StringField('First Name', validators=[DataRequired()])
- #   lName = StringField('Last Name', validators=[DataRequired()]) 
-  #  email = EmailField('Email',validators=[Email()])
-   # phone_num = StringField('Phone Number', validators=[DataRequired(), Length(min=10, max=15)])
+class ContactListForm(FlaskForm):
+    fName = StringField('First Name', validators=[DataRequired()])
+    lName = StringField('Last Name', validators=[DataRequired()]) 
+    email = EmailField('Email',validators=[Email()])
+    phone_num = StringField('Phone Number', validators=[DataRequired(), Length(min=10, max=15)])
+    submit = SubmitField('Submit')
+
     
 
 

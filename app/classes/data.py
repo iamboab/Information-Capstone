@@ -100,13 +100,15 @@ class Clinic(Document):
         'ordering': ['-createdate']
     }
 
-class Contact(Document):
+class ContactList(Document):
+    author = ReferenceField('User',reverse_delete_rule=CASCADE) 
     fName = StringField()
     lName = StringField()
     email = EmailField()
     phone_num = StringField()
-    
+    createdate = DateTimeField(default=dt.datetime.utcnow)
+    modify_date = DateTimeField()
     meta = {
-        'ordering': ['sleep_date']
+        'ordering': ['-createdate']
     }
     

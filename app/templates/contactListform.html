@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% block body %}
+<img src="/static/CloudsPNG.png" class="rounded float-end" width = "200" hieght= "200" alt="...">
+
+<img src="/static/CloudsPNG.png" class="rounded float-start" width = "200" hieght= "200" alt="...">    </div>
+<img src="/static/CloudsPNG.png" class="rounded float-end" width = "200" hieght= "200" alt="...">
+
+<img src="/static/CloudsPNG.png" class="rounded float-start" width = "200" hieght= "200" alt="...">    </div>
+        <h1>Add a post!</h1>
+
+        <div class="text-center">
+
+        
+        <form method=post>
+            {{ form.hidden_tag() }}
+            <p>
+                {{ form.fName.label }} <br>
+                {{ form.fName(size=64) }}
+                <!--List the errors for this field-->
+                {% for error in form.fName.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </p>
+         
+            <p>
+                {{ form.lName.label }} <br>
+                {{ form.lName(size=64) }}
+                <!--List the errors for this field-->
+                {% for error in form.lName.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </p>
+
+            <p>
+                {{ form.email.label }} <br>
+                {{ form.email(size=64) }}
+                <!--List the errors for this field-->
+                {% for error in form.email.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </p>
+            
+            <p>
+                {{ form.phone_num.label }} <br>
+                {{ form.phone_num(size=64) }}
+                <!--List the errors for this field-->
+                {% for error in form.phone_num.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </p>
+
+             <p>
+                <img src="/static/CloudsPNG.png" class="rounded float-end" width = "200" hieght= "200" alt="...">
+                <img src="/static/CloudsPNG.png" class="rounded float-start" width = "200" hieght= "200" alt="...">    </div>
+                <img src="/static/CloudsPNG.png" class="rounded float-end" width = "200" hieght= "200" alt="...">
+                <img src="/static/CloudsPNG.png" class="rounded float-end" width = "200" hieght= "200" alt="...">
+
+<img src="/static/CloudsPNG.png" class="rounded float-start" width = "200" hieght= "200" alt="...">    </div>
+<img src="/static/CloudsPNG.png" class="rounded float-end" width = "200" hieght= "200" alt="...">
+
+
+
+
+
+
+<img src="/static/CloudsPNG.png" class="rounded float-start" width = "200" hieght= "200" alt="...">    </div>
+
+
+                {{form.submit()}}
+            </p>
+        </form>
+    </div>
+       
+{% endblock %}
